@@ -1,0 +1,11 @@
+Inv <- x$getinverse()
+    if(!is.null(Inv)) 
+{
+        message("getting the cached data")
+        return(Inv)
+    }
+    data <- x$get()
+    Inv <- solve(data, ...)
+    x$setinverse(Inv)
+    Inv
+}
